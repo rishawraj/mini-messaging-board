@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Form
+    p Welcome to form!
+
+    form(action="/new" method="post")
+        h2 Contact Form
+        label(for="name") Name:
+        input(type="text" name="name" id="name")
+
+        label(for="message") Message:
+        input(type="text" name="message" id="message")
+
+        button(type="submit") Submit
+    br
+    a(href="http://localhost:3000/") back to home

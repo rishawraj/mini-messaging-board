@@ -3,3 +3,10 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  ul
+  each message in messages
+    li= message.user + ': ' + message.text + ' - ' + message.added.toLocaleString()
+  br
+
+  a(href='http://localhost:3000/new') Go To Form
+
