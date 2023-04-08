@@ -17,7 +17,7 @@ router.get("/", function (req, res, next) {
   messages
     .find({})
     .then((messages) => {
-      res.render("index", { title: "mini-message-board", messages: messages });
+      res.render("index", { title: "mini-message-board", messages });
     })
     .catch((err) => {
       res.render("error", { error: err });

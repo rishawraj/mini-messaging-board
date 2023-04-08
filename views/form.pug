@@ -1,18 +1,21 @@
 extends layout
 
 block content
-    h1 Form
-    p Welcome to form!
+    div.container
+        div.navbar
+            h1 Submit Your Message!
 
-    form(action="/new" method="post")
-        h2 Contact Form
-        label(for="name") Name:
-        input(type="text" name="name" id="name" required)
+        form(action="/new" method="post")
+            label(for="name") Name:
+            input(type="text" name="name" id="name" required)
 
-        label(for="message") Message:
-        input(type="text" name="message" id="message" required)
+            label(for="message") Message:
+            input(type="text" name="message" id="message" required)
 
-        button(type="submit") Submit
-    br
+            button(type="submit") Submit
 
-    a(href='https://mini-message-board-wamc.onrender.com/') Go To Home
+        button.btn
+            a(href='https://mini-message-board-wamc.onrender.com/') Go To Home
+
+    head 
+        link(rel="stylesheet", href="./stylesheets/new.css")

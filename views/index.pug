@@ -1,17 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  ul
-    each message in messages
-      li
-        h3= message.name
-        p= message.message
-        p Date: #{message.date}
+  div.container
+    div.navbar
+      h1= title
+      button  
+        a(href='https://mini-message-board-wamc.onrender.com/new') Send a message
 
-  br
+    div.messageContainer
+      each message in messages
+        div.message
+          div.user-and-time
+            h3= message.name
+            - const date = new Date(message.date) // use your date object here
+            - const fullYear = date.getFullYear()
+            - const hours = date.getHours();
+            - const minutes = date.getMinutes().toString().padStart(2, "0");
+            - const day = date.getDate();
+            - const month = date.toLocaleString('default', { month: 'short' });
+            - const amPm = hours >= 12 ? 'pm' : 'am';
+            - const formattedDate = `${hours % 12}:${minutes} ${amPm} ${day} ${month} ${fullYear}`;
+            p #{formattedDate}
+          div.text
+            span= message.message
 
-  a(href='https://mini-message-board-wamc.onrender.com/new') Go To Form
-
-
+  head 
+    link(rel="stylesheet", href="./stylesheets/main.css", type='text/css')

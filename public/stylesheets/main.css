@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  /* background-color: red; */
+  background-color: #3c6382;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #60a3bc;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.navbar {
+  background-color: #0a3d62;
+  color: #f8c291;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.navbar button {
+  padding: 8px;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: #0a3d62;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: black;
+}
+
+.navbar button:hover a {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.messageContainer {
+  /* background-color: lightcoral; */
+  padding: 12px;
+  /* height: 90%; */
+  overflow-y: auto;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  /* padding: 10px; */
+}
+
+.message {
+  /* background-color: lightgreen; */
+  margin: 5px;
+  /* padding: 10px; */
+  display: inline;
+  /* width: auto; */
+}
+
+.message .user-and-time {
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+}
+.message .user-and-time h3 {
+  color: #353b48;
+}
+.message .user-and-time p {
+  color: #dcdde1;
+}
+
+.message .text {
+  background-color: #c7ecee;
+  display: inline-flex;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 12px;
+}
+
+/* !======================== */
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ecf0f1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2c3e50;
+}
