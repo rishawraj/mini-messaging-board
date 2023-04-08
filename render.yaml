@@ -1,0 +1,7 @@
+name: My Mini Message Board
+env:
+  MONGO_URI:
+    from_secret: monog_uri
+build:
+  env:
+    NODE_ENV: production

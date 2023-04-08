@@ -1,23 +1,24 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const messages = require("../models/message");
 
-/* GET home page. */
+const router = express.Router();
+dotenv.config();
 
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Rishaw",
-    added: new Date(),
-  },
-  {
-    text: "Hello world!",
-    user: "Himesh",
-    added: new Date(),
-  },
-];
+mongoose
+  .connect(process.env.MONGO_URI, {})
+  .then(() => {
+    console.log("MongoDB Connected!!");
+  })
+  .catch((err) => console.log(err));
 
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Mini Message Board", messages: messages });
+  messages.find({}).then((messages) => {
+    // console.log(messages);
+    // res.send("hi");
+    res.render("index", { title: "mini-message-board", messages: messages });
+  });
 });
 
 router.get("/new", function (req, res, next) {
@@ -25,12 +26,20 @@ router.get("/new", function (req, res, next) {
 });
 
 router.post("/new", (req, res) => {
-  messages.push({
-    text: req.body.message,
-    user: req.body.name,
-    added: new Date(),
+  const newMessage = new messages({
+    name: req.body.name,
+    message: req.body.message,
   });
-  res.redirect("/");
+
+  newMessage
+    .save()
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.error("Error saving message", err);
+      res.render("error", { error: err });
+    });
 });
 
 module.exports = router;
