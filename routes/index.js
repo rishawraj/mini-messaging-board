@@ -14,11 +14,14 @@ mongoose
   .catch((err) => console.log(err));
 
 router.get("/", function (req, res, next) {
-  messages.find({}).then((messages) => {
-    // console.log(messages);
-    // res.send("hi");
-    res.render("index", { title: "mini-message-board", messages: messages });
-  });
+  messages
+    .find({})
+    .then((messages) => {
+      res.render("index", { title: "mini-message-board", messages: messages });
+    })
+    .catch((err) => {
+      res.render("error", { error: err });
+    });
 });
 
 router.get("/new", function (req, res, next) {
