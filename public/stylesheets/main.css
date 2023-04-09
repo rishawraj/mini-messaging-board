@@ -32,13 +32,18 @@ body {
 
 .navbar {
   background-color: #0a3d62;
-  color: #f8c291;
+  color: #74b9ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
+
+  /* shadow */
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
 .navbar button {
@@ -55,12 +60,6 @@ body {
 
 .navbar button:hover a {
   color: white;
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
 }
 
 .messageContainer {
@@ -88,7 +87,8 @@ body {
   justify-content: space-between;
 }
 .message .user-and-time h3 {
-  color: #353b48;
+  color: black;
+  text-transform: capitalize;
 }
 .message .user-and-time p {
   color: #dcdde1;
@@ -122,4 +122,27 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #2c3e50;
+}
+
+/*! footer */
+.attribution {
+  background-color: #c7ecee;
+  border: 1px solid black;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-content: center;
+}
+.attribution a {
+  color: #0a3d62;
+}
+.attribution a:hover {
+  color: #60a3bc;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
 }

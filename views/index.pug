@@ -12,10 +12,11 @@ block content
         div.message
           div.user-and-time
             h3= message.name
-            - const date = new Date(message.date) // use your date object here
+            - let  date = new Date(message.date) // use your date object here
             - const fullYear = date.getFullYear()
             - const hours = date.getHours();
-            - const minutes = date.getMinutes().toString().padStart(2, "0");
+            - const min = date.getMinutes();
+            - const minutes = min.toString().padStart(2, "0");
             - const day = date.getDate();
             - const month = date.toLocaleString('default', { month: 'short' });
             - const amPm = hours >= 12 ? 'pm' : 'am';
@@ -23,6 +24,16 @@ block content
             p #{formattedDate}
           div.text
             span= message.message
+    div.attribution
+      | created by&nbsp;
+      a.github(href='https://github.com/rishawraj', target='_blank', rel='noopener noreferrer')
+        i.fab.fa-github(aria-hidden='true')
+        | &nbsp;rishawraj
 
   head 
+    script(src="https://kit.fontawesome.com/1df7e7737b.js" crossorigin="anonymous") 
     link(rel="stylesheet", href="./stylesheets/main.css", type='text/css')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+
+

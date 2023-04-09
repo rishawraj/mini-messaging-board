@@ -75,3 +75,10 @@ form button {
 .container .btn:hover a {
   color: #22a6b3;
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 85%;
+    height: 80%;
+  }
+}
