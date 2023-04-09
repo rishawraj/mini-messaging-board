@@ -13,15 +13,8 @@ block content
           div.user-and-time
             h3= message.name
             - let  date = new Date(message.date) // use your date object here
-            - const fullYear = date.getFullYear()
-            - const hours = date.getHours();
-            - const min = date.getMinutes();
-            - const minutes = min.toString().padStart(2, "0");
-            - const day = date.getDate();
-            - const month = date.toLocaleString('default', { month: 'short' });
-            - const amPm = hours >= 12 ? 'pm' : 'am';
-            - const formattedDate = `${hours % 12}:${minutes} ${amPm} ${day} ${month} ${fullYear}`;
-            p #{formattedDate}
+            - const formattedDate2 = date.toLocaleString('en-IN', {timeZone:'Asia/Kolkata', hour: 'numeric', minute:'numeric', hour12:true, day:'numeric', month:'short', year:'numeric'})
+            p #{formattedDate2}
           div.text
             span= message.message
     div.attribution

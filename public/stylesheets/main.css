@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Prompt&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -6,14 +7,13 @@
 
 a {
   text-decoration: none;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
   height: 100vh;
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
-  /* background-color: red; */
   background-color: #3c6382;
-
+  font-family: "Nunito", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,32 +63,23 @@ body {
 }
 
 .messageContainer {
-  /* background-color: lightcoral; */
   padding: 12px;
-  /* height: 90%; */
   overflow-y: auto;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
-  /* padding: 10px; */
 }
 
 .message {
-  /* background-color: lightgreen; */
   margin: 5px;
-  /* padding: 10px; */
   display: inline;
-  /* width: auto; */
 }
 
 .message .user-and-time {
-  /* background-color: yellow; */
   display: flex;
   justify-content: space-between;
 }
 .message .user-and-time h3 {
   color: black;
   text-transform: capitalize;
+  font-family: "Prompt", sans-serif;
 }
 .message .user-and-time p {
   color: #dcdde1;
